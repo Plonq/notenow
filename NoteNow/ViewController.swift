@@ -8,12 +8,19 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class ViewController: NSViewController, NSTextViewDelegate {
+    // MARK: Properties
+    
+    @IBOutlet var noteTextView: NSTextView!
+    
+    var text = ""
+    var textChangedCallback: ((String) -> Void)? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        noteTextView.delegate = self
+        noteTextView.string = text
     }
 
     override var representedObject: Any? {
@@ -21,7 +28,26 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
+    
+    // MARK NSTextViewDelegate Methods
+    
+    func textDidChange(_ notification: Notification) {
+        guard let callback = textChangedCallback else {
+            fatalError("ViewController wasn't provided a callback to update the text")
+        }
+        
+        callback(noteTextView.string)
+    }
 
+    // MARK: Actions
 
+    @IBAction func copyToPasteboard(_ sender: Any) {
+        NSPasteboard.general.clearContents()
+        NSPasteboard.general.setString(noteTextView.string, forType: .string)
+    }
+    
+    @IBAction func clearTextView(_ sender: Any) {
+        noteTextView.string = ""
+    }
 }
 
