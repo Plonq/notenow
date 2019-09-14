@@ -12,6 +12,7 @@
 		3B0EF0B423250850008061F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B0EF0B323250850008061F2 /* Assets.xcassets */; };
 		3B0EF0B723250850008061F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B0EF0B523250850008061F2 /* Main.storyboard */; };
 		3B0EF0C323250850008061F2 /* NoteNowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0EF0C223250850008061F2 /* NoteNowTests.swift */; };
+		3B7660C5232CEB99005D65E4 /* PrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7660C4232CEB99005D65E4 /* PrefsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		3B0EF0BE23250850008061F2 /* NoteNowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteNowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B0EF0C223250850008061F2 /* NoteNowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteNowTests.swift; sourceTree = "<group>"; };
 		3B0EF0C423250850008061F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B7660C4232CEB99005D65E4 /* PrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			children = (
 				3B0EF0AF2325084F008061F2 /* AppDelegate.swift */,
 				3B0EF0B12325084F008061F2 /* ViewController.swift */,
+				3B7660C4232CEB99005D65E4 /* PrefsViewController.swift */,
 				3B0EF0B323250850008061F2 /* Assets.xcassets */,
 				3B0EF0B523250850008061F2 /* Main.storyboard */,
 				3B0EF0B823250850008061F2 /* Info.plist */,
@@ -196,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B0EF0B22325084F008061F2 /* ViewController.swift in Sources */,
+				3B7660C5232CEB99005D65E4 /* PrefsViewController.swift in Sources */,
 				3B0EF0B02325084F008061F2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

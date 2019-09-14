@@ -12,6 +12,7 @@ class ViewController: NSViewController, NSTextViewDelegate {
     // MARK: Properties
     
     @IBOutlet var noteTextView: NSTextView!
+    @IBOutlet weak var settingsButton: NSButton!
     
     var text = ""
     var textChangedCallback: ((String) -> Void)? = nil
@@ -21,6 +22,8 @@ class ViewController: NSViewController, NSTextViewDelegate {
         
         noteTextView.delegate = self
         noteTextView.string = text
+        
+        self.initSettingsMenu()
     }
 
     override var representedObject: Any? {
@@ -29,7 +32,16 @@ class ViewController: NSViewController, NSTextViewDelegate {
         }
     }
     
-    // MARK NSTextViewDelegate Methods
+    // MARK: Init Functions
+    
+    private func initSettingsMenu() {
+        let settingsMenu = NSMenu.init(title: "Test")
+        settingsMenu.addItem(withTitle: "Preferences...", action: #selector(showPreferences), keyEquivalent: "")
+        settingsMenu.addItem(withTitle: "Quit", action: #selector(quit), keyEquivalent: "")
+        settingsButton.menu = settingsMenu
+    }
+    
+    // MARK NSTextViewDelegate Functions
     
     func textDidChange(_ notification: Notification) {
         guard let callback = textChangedCallback else {
@@ -48,6 +60,28 @@ class ViewController: NSViewController, NSTextViewDelegate {
     
     @IBAction func clearTextView(_ sender: Any) {
         noteTextView.string = ""
+    }
+    
+    @IBAction func showSettings(_ sender: NSButton) {
+        if let event = NSApplication.shared.currentEvent {
+            NSMenu.popUpContextMenu(sender.menu!, with: event, for: sender)
+        }
+    }
+    
+    // MARK: Menu Actions
+    
+    @objc func showPreferences() {
+        let storyboard = NSStoryboard(name: "Main", bundle: nil)
+        
+        guard let wc = storyboard.instantiateController(withIdentifier: "WindowController") as? NSWindowController else {
+            fatalError("Unable to find WindowController in the storyboard")
+        }
+        
+        wc.showWindow(self)
+    }
+    
+    @objc func quit() {
+        NSApplication.shared.terminate(self)
     }
 }
 

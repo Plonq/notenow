@@ -712,7 +712,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="GfO-NY-s2M"/>
                                 </constraints>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="SMv-ku-9qG">
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="SMv-ku-9qG">
                                     <rect key="frame" x="-100" y="-100" width="240" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -741,27 +741,100 @@
                                     <action selector="clearTextView:" target="XfG-lQ-9wD" id="LoY-HI-GYj"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="URE-ie-EYI">
+                                <rect key="frame" x="20" y="8" width="34" height="21"/>
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAdvanced" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kFg-AX-Y4a">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="showSettings:" target="XfG-lQ-9wD" id="j7J-6P-5tu"/>
+                                    </connections>
+                                </buttonCell>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="5f1-XW-E8P" firstAttribute="leading" secondItem="5Iy-Rk-efR" secondAttribute="trailing" constant="12" id="3oX-UY-wad"/>
                             <constraint firstAttribute="trailing" secondItem="2TU-Ed-6dI" secondAttribute="trailing" constant="20" id="4PW-70-B6H"/>
-                            <constraint firstItem="5Iy-Rk-efR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="5vr-Cr-KhM"/>
                             <constraint firstItem="5f1-XW-E8P" firstAttribute="top" secondItem="2TU-Ed-6dI" secondAttribute="bottom" constant="8" id="9SV-CJ-7WD"/>
                             <constraint firstItem="2TU-Ed-6dI" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="HKY-Qr-0bA"/>
+                            <constraint firstItem="URE-ie-EYI" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="K7z-cQ-u62"/>
                             <constraint firstItem="2TU-Ed-6dI" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="Qdm-hN-XBl"/>
                             <constraint firstItem="5Iy-Rk-efR" firstAttribute="top" secondItem="2TU-Ed-6dI" secondAttribute="bottom" constant="8" id="Vj0-gq-KAM"/>
+                            <constraint firstItem="URE-ie-EYI" firstAttribute="top" secondItem="2TU-Ed-6dI" secondAttribute="bottom" constant="9" id="mpX-PQ-V8y"/>
                             <constraint firstAttribute="trailing" secondItem="5f1-XW-E8P" secondAttribute="trailing" constant="20" id="nwe-ZG-ZA5"/>
                             <constraint firstAttribute="bottom" secondItem="5f1-XW-E8P" secondAttribute="bottom" constant="8" id="p6Q-gB-Nl1"/>
+                            <constraint firstAttribute="bottom" secondItem="URE-ie-EYI" secondAttribute="bottom" constant="9" id="pjs-Pb-saG"/>
                             <constraint firstAttribute="bottom" secondItem="5Iy-Rk-efR" secondAttribute="bottom" constant="8" id="toG-Z2-FRf"/>
+                            <constraint firstItem="5Iy-Rk-efR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="URE-ie-EYI" secondAttribute="trailing" constant="8" id="yEE-fM-YNa"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="noteTextView" destination="DZ1-Zw-AQ4" id="orF-eR-bgt"/>
+                        <outlet property="settingsButton" destination="URE-ie-EYI" id="T2g-Hg-ffQ"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75.5" y="212"/>
+            <point key="canvasLocation" x="75.5" y="211.5"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="wV6-Up-gbh">
+            <objects>
+                <windowController storyboardIdentifier="WindowController" id="upZ-bZ-RCR" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="rm4-BZ-DAk">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="245" y="301" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <connections>
+                            <outlet property="delegate" destination="upZ-bZ-RCR" id="Gyr-XC-HCR"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="QKO-A1-Kiq" kind="relationship" relationship="window.shadowedContentViewController" id="WC2-GD-iRb"/>
+                    </connections>
+                </windowController>
+                <customObject id="CDL-hj-e4T" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-203" y="637"/>
+        </scene>
+        <!--Prefs View Controller-->
+        <scene sceneID="wen-o4-W0p">
+            <objects>
+                <viewController id="QKO-A1-Kiq" customClass="PrefsViewController" customModule="NoteNow" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="noo-G2-btT">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NW2-jI-h82">
+                                <rect key="frame" x="202" y="126" width="77" height="17"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="I am a label!" id="GOF-is-AAG">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="veq-XB-QE7">
+                                <rect key="frame" x="202" y="156" width="81" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="XFo-PY-Pbk">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="button:" target="QKO-A1-Kiq" id="Qw0-dr-FiW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="nDZ-0R-gPd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="406" y="637"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NSAdvanced" width="32" height="32"/>
+    </resources>
 </document>
