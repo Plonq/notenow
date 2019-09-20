@@ -50,7 +50,7 @@ class PrefsViewController: NSViewController {
     // MARK: Global shortcut
     
     func updateGlobalShortcut(_ event : NSEvent) {
-        self.listening = false
+        listening = false
         
         if let characters = event.charactersIgnoringModifiers {
             let newGlobalKeybind = GlobalKeybindPreferences.init(

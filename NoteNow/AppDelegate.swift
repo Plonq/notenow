@@ -16,9 +16,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: Properties
     
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-    private var textStorage = ""
-    private var mainViewController: ViewController? = nil
-    
+    private var text = ""
+
     public var hotKey: HotKey? {
         didSet {
             guard let hotKey = hotKey else {
@@ -41,7 +40,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Load saved text if it exists
         if Storage.fileExists("data.json", in: .documents) {
             let data = Storage.retrieve("data.json", from: .documents, as: AppData.self)
-            self.updateText(data.text)
+            text = data.text
         }
         
         // Initialise global hotkey
@@ -57,7 +56,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             Storage.remove("data.json", from: .documents)
         }
         
-        let data = AppData.init(text: textStorage)
+        let data = AppData.init(text: text)
         Storage.store(data, to: .documents, as: "data.json")
     }
     
@@ -74,19 +73,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             fatalError("Unable to find button on statusItem")
         }
         
-        vc.textChangedCallback = updateText
-        vc.text = textStorage
+        vc.onTextChanged = { [weak self] (text) in
+            self?.text = text
+        }
+        vc.text = text
         
         let popoverView = NSPopover()
         popoverView.contentViewController = vc
         popoverView.behavior = .transient
         popoverView.show(relativeTo: button.bounds, of: button, preferredEdge: .maxY)
-        
-        mainViewController = vc
-    }
-    
-    func updateText(_ string: String) {
-        textStorage = string
     }
 }
 

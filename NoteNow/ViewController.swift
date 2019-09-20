@@ -16,7 +16,7 @@ class ViewController: NSViewController, NSTextViewDelegate {
     @IBOutlet weak var settingsButton: NSButton!
     
     var text = ""
-    var textChangedCallback: ((String) -> Void)? = nil
+    var onTextChanged: ((String) -> Void)? = nil
     
     // MARK: App lifecycle
 
@@ -29,12 +29,6 @@ class ViewController: NSViewController, NSTextViewDelegate {
         self.initSettingsMenu()
     }
 
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
-    
     // MARK: Init
     
     private func initSettingsMenu() {
@@ -47,11 +41,11 @@ class ViewController: NSViewController, NSTextViewDelegate {
     // MARK: NSTextViewDelegate
     
     func textDidChange(_ notification: Notification) {
-        guard let callback = textChangedCallback else {
-            fatalError("ViewController wasn't provided a callback to update the text")
+        guard let textChangedHandler = onTextChanged else {
+            fatalError("ViewController wasn't provided a closure to handle persisting the text")
         }
         
-        callback(noteTextView.string)
+        textChangedHandler(noteTextView.string)
     }
 
     // MARK: Actions
