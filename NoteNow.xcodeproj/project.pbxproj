@@ -12,6 +12,14 @@
 		3B0EF0B423250850008061F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B0EF0B323250850008061F2 /* Assets.xcassets */; };
 		3B0EF0B723250850008061F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B0EF0B523250850008061F2 /* Main.storyboard */; };
 		3B0EF0C323250850008061F2 /* NoteNowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0EF0C223250850008061F2 /* NoteNowTests.swift */; };
+		3B4717BD232E512700B349EB /* HotKey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4717BB232E512700B349EB /* HotKey.framework */; };
+		3B4717BE232E512700B349EB /* HotKey.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4717BB232E512700B349EB /* HotKey.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3B4717C4232E52E100B349EB /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 3B4717C3232E52E100B349EB /* Cartfile */; };
+		3B4717C6232E533E00B349EB /* HotKey.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3B4717C5232E533E00B349EB /* HotKey.framework.dSYM */; };
+		3B4717C8232E58AD00B349EB /* PrefsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4717C7232E58AD00B349EB /* PrefsWindowController.swift */; };
+		3B4717CA232E60EB00B349EB /* GlobalKeybindPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4717C9232E60EB00B349EB /* GlobalKeybindPreferences.swift */; };
+		3B4717CC23323CD700B349EB /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4717CB23323CD700B349EB /* Storage.swift */; };
+		3B4717CE233446B800B349EB /* PrefsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4717CD233446B800B349EB /* PrefsWindow.swift */; };
 		3B7660C5232CEB99005D65E4 /* PrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7660C4232CEB99005D65E4 /* PrefsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +33,30 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3B4717BF232E512700B349EB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3B4717BE232E512700B349EB /* HotKey.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B4717C0232E517600B349EB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				3B4717C6232E533E00B349EB /* HotKey.framework.dSYM in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		3B0EF0AC2325084F008061F2 /* NoteNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B0EF0AF2325084F008061F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +68,13 @@
 		3B0EF0BE23250850008061F2 /* NoteNowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteNowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B0EF0C223250850008061F2 /* NoteNowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteNowTests.swift; sourceTree = "<group>"; };
 		3B0EF0C423250850008061F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B4717BB232E512700B349EB /* HotKey.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HotKey.framework; path = Carthage/Build/Mac/HotKey.framework; sourceTree = "<group>"; };
+		3B4717C3232E52E100B349EB /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		3B4717C5232E533E00B349EB /* HotKey.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = HotKey.framework.dSYM; path = Carthage/Build/Mac/HotKey.framework.dSYM; sourceTree = "<group>"; };
+		3B4717C7232E58AD00B349EB /* PrefsWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsWindowController.swift; sourceTree = "<group>"; };
+		3B4717C9232E60EB00B349EB /* GlobalKeybindPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalKeybindPreferences.swift; sourceTree = "<group>"; };
+		3B4717CB23323CD700B349EB /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		3B4717CD233446B800B349EB /* PrefsWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsWindow.swift; sourceTree = "<group>"; };
 		3B7660C4232CEB99005D65E4 /* PrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -44,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B4717BD232E512700B349EB /* HotKey.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +100,9 @@
 		3B0EF0A32325084E008061F2 = {
 			isa = PBXGroup;
 			children = (
+				3B4717C5232E533E00B349EB /* HotKey.framework.dSYM */,
+				3B4717BB232E512700B349EB /* HotKey.framework */,
+				3B4717C3232E52E100B349EB /* Cartfile */,
 				3B0EF0AE2325084F008061F2 /* NoteNow */,
 				3B0EF0C123250850008061F2 /* NoteNowTests */,
 				3B0EF0AD2325084F008061F2 /* Products */,
@@ -80,7 +123,11 @@
 			children = (
 				3B0EF0AF2325084F008061F2 /* AppDelegate.swift */,
 				3B0EF0B12325084F008061F2 /* ViewController.swift */,
+				3B4717CD233446B800B349EB /* PrefsWindow.swift */,
+				3B4717C7232E58AD00B349EB /* PrefsWindowController.swift */,
 				3B7660C4232CEB99005D65E4 /* PrefsViewController.swift */,
+				3B4717CB23323CD700B349EB /* Storage.swift */,
+				3B4717C9232E60EB00B349EB /* GlobalKeybindPreferences.swift */,
 				3B0EF0B323250850008061F2 /* Assets.xcassets */,
 				3B0EF0B523250850008061F2 /* Main.storyboard */,
 				3B0EF0B823250850008061F2 /* Info.plist */,
@@ -108,6 +155,8 @@
 				3B0EF0A82325084F008061F2 /* Sources */,
 				3B0EF0A92325084F008061F2 /* Frameworks */,
 				3B0EF0AA2325084F008061F2 /* Resources */,
+				3B4717BF232E512700B349EB /* Embed Frameworks */,
+				3B4717C0232E517600B349EB /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -179,6 +228,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B4717C4232E52E100B349EB /* Cartfile in Resources */,
 				3B0EF0B423250850008061F2 /* Assets.xcassets in Resources */,
 				3B0EF0B723250850008061F2 /* Main.storyboard in Resources */,
 			);
@@ -198,9 +248,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B4717CA232E60EB00B349EB /* GlobalKeybindPreferences.swift in Sources */,
 				3B0EF0B22325084F008061F2 /* ViewController.swift in Sources */,
 				3B7660C5232CEB99005D65E4 /* PrefsViewController.swift in Sources */,
+				3B4717C8232E58AD00B349EB /* PrefsWindowController.swift in Sources */,
 				3B0EF0B02325084F008061F2 /* AppDelegate.swift in Sources */,
+				3B4717CE233446B800B349EB /* PrefsWindow.swift in Sources */,
+				3B4717CC23323CD700B349EB /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +411,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = JNLV9JG87V;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = NoteNow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -376,6 +434,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = JNLV9JG87V;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = NoteNow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

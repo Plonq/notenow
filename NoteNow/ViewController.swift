@@ -71,13 +71,27 @@ class ViewController: NSViewController, NSTextViewDelegate {
     // MARK: Menu Actions
     
     @objc func showPreferences() {
-        let storyboard = NSStoryboard(name: "Main", bundle: nil)
+        // Check if prefs window is already open. If it is, bring it to front
+        var existingWindow = false
+        NSApplication.shared.windows.forEach({ (window) in
+            if let value = window.identifier?.rawValue {
+                if value == "PrefsWindow" {
+                    print("woo")
+                    window.makeKeyAndOrderFront(self)
+                    existingWindow = true
+                }
+            }
+        })
         
-        guard let wc = storyboard.instantiateController(withIdentifier: "WindowController") as? NSWindowController else {
-            fatalError("Unable to find WindowController in the storyboard")
+        if existingWindow == false {
+            let storyboard = NSStoryboard(name: "Main", bundle: nil)
+            
+            guard let wc = storyboard.instantiateController(withIdentifier: "WindowController") as? NSWindowController else {
+                fatalError("Unable to find WindowController in the storyboard")
+            }
+            
+            wc.showWindow(self)
         }
-        
-        wc.showWindow(self)
     }
     
     @objc func quit() {

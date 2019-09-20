@@ -701,7 +701,7 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="unemphasizedSelectedContentBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="291" height="110"/>
+                                            <size key="minSize" width="279" height="110"/>
                                             <size key="maxSize" width="306" height="10000000"/>
                                             <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
@@ -780,8 +780,8 @@
         <!--Window Controller-->
         <scene sceneID="wV6-Up-gbh">
             <objects>
-                <windowController storyboardIdentifier="WindowController" id="upZ-bZ-RCR" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="rm4-BZ-DAk">
+                <windowController storyboardIdentifier="WindowController" id="upZ-bZ-RCR" customClass="PrefsWindowController" customModule="NoteNow" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" identifier="PrefsWindow" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="rm4-BZ-DAk" customClass="PrefsWindow" customModule="NoteNow" customModuleProvider="target">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="245" y="301" width="480" height="270"/>
@@ -807,27 +807,42 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NW2-jI-h82">
-                                <rect key="frame" x="202" y="126" width="77" height="17"/>
+                                <rect key="frame" x="78" y="129" width="91" height="17"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="I am a label!" id="GOF-is-AAG">
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Global hotkey:" id="GOF-is-AAG">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="veq-XB-QE7">
-                                <rect key="frame" x="202" y="156" width="81" height="32"/>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v9n-24-bwj">
+                                <rect key="frame" x="169" y="120" width="83" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="XFo-PY-Pbk">
+                                <buttonCell key="cell" type="push" title="Set" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CzN-XS-h6e">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="button:" target="QKO-A1-Kiq" id="Qw0-dr-FiW"/>
+                                    <action selector="register:" target="QKO-A1-Kiq" id="NMb-Hr-prB"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="veq-XB-QE7">
+                                <rect key="frame" x="252" y="120" width="84" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Clear" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" inset="2" id="XFo-PY-Pbk">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="unregister:" target="QKO-A1-Kiq" id="GML-7D-Yhn"/>
                                 </connections>
                             </button>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="clearButton" destination="veq-XB-QE7" id="wk5-oF-joo"/>
+                        <outlet property="shortcutButton" destination="v9n-24-bwj" id="VOg-1a-l8m"/>
+                    </connections>
                 </viewController>
                 <customObject id="nDZ-0R-gPd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
