@@ -14,6 +14,7 @@ class ViewController: NSViewController, NSTextViewDelegate {
     
     @IBOutlet var noteTextView: NSTextView!
     @IBOutlet weak var settingsButton: NSButton!
+    @IBOutlet weak var shareButton: NSButton!
     
     var text = ""
     var onTextChanged: ((String) -> Void)? = nil
@@ -27,6 +28,8 @@ class ViewController: NSViewController, NSTextViewDelegate {
         noteTextView.string = text
         
         self.initSettingsMenu()
+        self.setupTextView()
+        self.setupShareButton()
     }
 
     // MARK: Init
@@ -38,14 +41,18 @@ class ViewController: NSViewController, NSTextViewDelegate {
         settingsButton.menu = settingsMenu
     }
     
+    private func setupTextView() {
+        noteTextView.font = NSFont.systemFont(ofSize: 16.0)
+    }
+    
+    private func setupShareButton() {
+        shareButton.sendAction(on: .leftMouseDown)
+    }
+    
     // MARK: NSTextViewDelegate
     
     func textDidChange(_ notification: Notification) {
-        guard let textChangedHandler = onTextChanged else {
-            fatalError("ViewController wasn't provided a closure to handle persisting the text")
-        }
-        
-        textChangedHandler(noteTextView.string)
+        updateText()
     }
 
     // MARK: Actions
@@ -57,12 +64,28 @@ class ViewController: NSViewController, NSTextViewDelegate {
     
     @IBAction func clearTextView(_ sender: Any) {
         noteTextView.string = ""
+        updateText()
     }
     
     @IBAction func showSettings(_ sender: NSButton) {
         if let event = NSApplication.shared.currentEvent {
             NSMenu.popUpContextMenu(sender.menu!, with: event, for: sender)
         }
+    }
+    
+    @IBAction func shareText(_ sender: NSButton) {
+        let shareMenu = NSSharingServicePicker(items: [text])
+        shareMenu.show(relativeTo: sender.bounds, of: sender, preferredEdge: .maxY)
+    }
+    
+    // MARK: Private functions
+    
+    private func updateText() {
+        guard let textChangedHandler = onTextChanged else {
+            fatalError("ViewController wasn't provided a closure to handle persisting the text")
+        }
+        
+        textChangedHandler(noteTextView.string)
     }
     
     // MARK: Settings menu actions
