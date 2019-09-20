@@ -33,7 +33,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: App lifecycle
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        statusItem.button?.title = "⦿"
+        statusItem.button?.title = "❖"
         statusItem.button?.target = self
         statusItem.button?.action = #selector(show)
         

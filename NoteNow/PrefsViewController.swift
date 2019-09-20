@@ -85,7 +85,6 @@ class PrefsViewController: NSViewController {
     
     // If the shortcut is cleared, clear the UI and tell AppDelegate to stop listening to the previous keybind.
     @IBAction func unregister(_ sender: Any?) {
-        print("unregister")
         let appDelegate = NSApplication.shared.delegate as! AppDelegate
         appDelegate.hotKey = nil
         shortcutButton.title = ""
