@@ -12,6 +12,7 @@ import Carbon
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+    
     // MARK: Properties
     
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
@@ -29,25 +30,40 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
     }
+    
+    // MARK: App lifecycle
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         statusItem.button?.title = "⦿"
         statusItem.button?.target = self
         statusItem.button?.action = #selector(show)
         
+        // Load saved text if it exists
+        if Storage.fileExists("data.json", in: .documents) {
+            let data = Storage.retrieve("data.json", from: .documents, as: AppData.self)
+            self.updateText(data.text)
+        }
+        
         // Initialise global hotkey
         if Storage.fileExists("globalKeybind.json", in: .documents) {
-            
             let globalKeybinds = Storage.retrieve("globalKeybind.json", from: .documents, as: GlobalKeybindPreferences.self)
             hotKey = HotKey(keyCombo: KeyCombo(carbonKeyCode: globalKeybinds.keyCode, carbonModifiers: globalKeybinds.carbonFlags))
         }
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+        // Save text to storage
+        if Storage.fileExists("data.json", in: .documents) {
+            Storage.remove("data.json", from: .documents)
+        }
+        
+        let data = AppData.init(text: textStorage)
+        Storage.store(data, to: .documents, as: "data.json")
     }
+    
+    // MARK: App
 
-    @objc func show() {
+    @objc private func show() {
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
         
         guard let vc = storyboard.instantiateController(withIdentifier: "ViewController") as? ViewController else {

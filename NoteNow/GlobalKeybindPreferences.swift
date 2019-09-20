@@ -5,9 +5,12 @@
 //  Created by Huon Imberger on 15/9/19.
 //  Copyright © 2019 Huon Imberger. All rights reserved.
 //
+//  https://dev.to/mitchartemis/creating-a-global-configurable-shortcut-for-macos-apps-in-swift-25e9
+//
 
 import Foundation
 
+/// Captures a hotkey in a Codable stuct for easy storage
 struct GlobalKeybindPreferences: Codable, CustomStringConvertible {
     let function : Bool
     let control : Bool

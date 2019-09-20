@@ -9,6 +9,7 @@
 import Cocoa
 
 class ViewController: NSViewController, NSTextViewDelegate {
+    
     // MARK: Properties
     
     @IBOutlet var noteTextView: NSTextView!
@@ -16,6 +17,8 @@ class ViewController: NSViewController, NSTextViewDelegate {
     
     var text = ""
     var textChangedCallback: ((String) -> Void)? = nil
+    
+    // MARK: App lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +35,7 @@ class ViewController: NSViewController, NSTextViewDelegate {
         }
     }
     
-    // MARK: Init Functions
+    // MARK: Init
     
     private func initSettingsMenu() {
         let settingsMenu = NSMenu.init(title: "Test")
@@ -41,7 +44,7 @@ class ViewController: NSViewController, NSTextViewDelegate {
         settingsButton.menu = settingsMenu
     }
     
-    // MARK NSTextViewDelegate Functions
+    // MARK: NSTextViewDelegate
     
     func textDidChange(_ notification: Notification) {
         guard let callback = textChangedCallback else {
@@ -68,7 +71,7 @@ class ViewController: NSViewController, NSTextViewDelegate {
         }
     }
     
-    // MARK: Menu Actions
+    // MARK: Settings menu actions
     
     @objc func showPreferences() {
         // Check if prefs window is already open. If it is, bring it to front

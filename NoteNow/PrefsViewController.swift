@@ -33,9 +33,7 @@ class PrefsViewController: NSViewController {
         }
     }
     
-    override func keyDown(with event: NSEvent) {
-        super.keyDown(with: event)
-    }
+    // MARK: App lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,11 +47,8 @@ class PrefsViewController: NSViewController {
         }
     }
     
-    // When a shortcut has been pressed by the user, turn off listening so the window stops listening for keybinds
-    // Put the shortcut into a JSON friendly struct and save it to storage
-    // Update the shortcut button to show the new keybind
-    // Make the clear button enabled to users can remove the shortcut
-    // Finally, tell AppDelegate to start listening for the new keybind
+    // MARK: Global shortcut
+    
     func updateGlobalShortcut(_ event : NSEvent) {
         self.listening = false
         

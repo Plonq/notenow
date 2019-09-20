@@ -12,6 +12,7 @@
 		3B0EF0B423250850008061F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B0EF0B323250850008061F2 /* Assets.xcassets */; };
 		3B0EF0B723250850008061F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B0EF0B523250850008061F2 /* Main.storyboard */; };
 		3B0EF0C323250850008061F2 /* NoteNowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0EF0C223250850008061F2 /* NoteNowTests.swift */; };
+		3B19DFF423345DFD00A3198C /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B19DFF323345DFD00A3198C /* AppData.swift */; };
 		3B4717BD232E512700B349EB /* HotKey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4717BB232E512700B349EB /* HotKey.framework */; };
 		3B4717BE232E512700B349EB /* HotKey.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4717BB232E512700B349EB /* HotKey.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3B4717C4232E52E100B349EB /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 3B4717C3232E52E100B349EB /* Cartfile */; };
@@ -68,6 +69,7 @@
 		3B0EF0BE23250850008061F2 /* NoteNowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteNowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B0EF0C223250850008061F2 /* NoteNowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteNowTests.swift; sourceTree = "<group>"; };
 		3B0EF0C423250850008061F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B19DFF323345DFD00A3198C /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		3B4717BB232E512700B349EB /* HotKey.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HotKey.framework; path = Carthage/Build/Mac/HotKey.framework; sourceTree = "<group>"; };
 		3B4717C3232E52E100B349EB /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		3B4717C5232E533E00B349EB /* HotKey.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = HotKey.framework.dSYM; path = Carthage/Build/Mac/HotKey.framework.dSYM; sourceTree = "<group>"; };
@@ -126,8 +128,9 @@
 				3B4717CD233446B800B349EB /* PrefsWindow.swift */,
 				3B4717C7232E58AD00B349EB /* PrefsWindowController.swift */,
 				3B7660C4232CEB99005D65E4 /* PrefsViewController.swift */,
-				3B4717CB23323CD700B349EB /* Storage.swift */,
 				3B4717C9232E60EB00B349EB /* GlobalKeybindPreferences.swift */,
+				3B19DFF323345DFD00A3198C /* AppData.swift */,
+				3B4717CB23323CD700B349EB /* Storage.swift */,
 				3B0EF0B323250850008061F2 /* Assets.xcassets */,
 				3B0EF0B523250850008061F2 /* Main.storyboard */,
 				3B0EF0B823250850008061F2 /* Info.plist */,
@@ -251,6 +254,7 @@
 				3B4717CA232E60EB00B349EB /* GlobalKeybindPreferences.swift in Sources */,
 				3B0EF0B22325084F008061F2 /* ViewController.swift in Sources */,
 				3B7660C5232CEB99005D65E4 /* PrefsViewController.swift in Sources */,
+				3B19DFF423345DFD00A3198C /* AppData.swift in Sources */,
 				3B4717C8232E58AD00B349EB /* PrefsWindowController.swift in Sources */,
 				3B0EF0B02325084F008061F2 /* AppDelegate.swift in Sources */,
 				3B4717CE233446B800B349EB /* PrefsWindow.swift in Sources */,
