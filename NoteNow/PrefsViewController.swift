@@ -17,6 +17,8 @@ class PrefsViewController: NSViewController {
     @IBOutlet weak var clearButton: NSButton!
     @IBOutlet weak var shortcutButton: NSButton!
     
+    weak var appDelegate: AppDelegate!
+    
     // When this boolean is true we will allow the user to set a new keybind.
     // We'll also trigger the button to highlight blue so the user sees feedback and knows the button is now active.
     var listening = false {
@@ -38,10 +40,13 @@ class PrefsViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Will never fail - if we don't have an app delegate, something is VERY wrong
+        appDelegate = NSApplication.shared.delegate as? AppDelegate
+        
         // Check to see if the keybind has been stored previously
         // If it has then update the UI with the below methods.
-        if Storage.fileExists("globalKeybind.json", in: .documents) {
-            let globalKeybinds = Storage.retrieve("globalKeybind.json", from: .documents, as: GlobalKeybindPreferences.self)
+        if Storage.fileExists(appDelegate.STORAGE_GLOBAL_HOTKEY, in: .documents) {
+            let globalKeybinds = Storage.retrieve(appDelegate.STORAGE_GLOBAL_HOTKEY, from: .documents, as: GlobalKeybindPreferences.self)
             updateKeybindButton(globalKeybinds)
             updateClearButton(globalKeybinds)
         }
@@ -65,7 +70,7 @@ class PrefsViewController: NSViewController {
                 keyCode: UInt32(event.keyCode)
             )
             
-            Storage.store(newGlobalKeybind, to: .documents, as: "globalKeybind.json")
+            Storage.store(newGlobalKeybind, to: .documents, as: appDelegate.STORAGE_GLOBAL_HOTKEY)
             updateKeybindButton(newGlobalKeybind)
             clearButton.isEnabled = true
             let appDelegate = NSApplication.shared.delegate as! AppDelegate
@@ -89,7 +94,7 @@ class PrefsViewController: NSViewController {
         appDelegate.hotKey = nil
         shortcutButton.title = ""
         
-        Storage.remove("globalKeybind.json", from: .documents)
+        Storage.remove(appDelegate.STORAGE_GLOBAL_HOTKEY, from: .documents)
     }
     
     // If a keybind is set, allow users to clear it by enabling the clear button.

@@ -15,6 +15,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     // MARK: Properties
     
+    let STORAGE_DATA = "data.json"
+    let STORAGE_GLOBAL_HOTKEY = "globalHotkey.json"
+    
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     private var text = ""
 
@@ -38,26 +41,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.button?.action = #selector(show)
         
         // Load saved text if it exists
-        if Storage.fileExists("data.json", in: .documents) {
-            let data = Storage.retrieve("data.json", from: .documents, as: AppData.self)
+        if Storage.fileExists(STORAGE_DATA, in: .documents) {
+            let data = Storage.retrieve(STORAGE_DATA, from: .documents, as: AppData.self)
             text = data.text
         }
         
         // Initialise global hotkey
-        if Storage.fileExists("globalKeybind.json", in: .documents) {
-            let globalKeybinds = Storage.retrieve("globalKeybind.json", from: .documents, as: GlobalKeybindPreferences.self)
+        if Storage.fileExists(STORAGE_GLOBAL_HOTKEY, in: .documents) {
+            let globalKeybinds = Storage.retrieve(STORAGE_GLOBAL_HOTKEY, from: .documents, as: GlobalKeybindPreferences.self)
             hotKey = HotKey(keyCombo: KeyCombo(carbonKeyCode: globalKeybinds.keyCode, carbonModifiers: globalKeybinds.carbonFlags))
         }
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Save text to storage
-        if Storage.fileExists("data.json", in: .documents) {
-            Storage.remove("data.json", from: .documents)
+        if Storage.fileExists(STORAGE_DATA, in: .documents) {
+            Storage.remove(STORAGE_DATA, from: .documents)
         }
         
         let data = AppData.init(text: text)
-        Storage.store(data, to: .documents, as: "data.json")
+        Storage.store(data, to: .documents, as: STORAGE_DATA)
     }
     
     // MARK: App

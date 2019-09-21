@@ -67,15 +67,15 @@ class ViewController: NSViewController, NSTextViewDelegate {
         updateText()
     }
     
-    @IBAction func showSettings(_ sender: NSButton) {
+    @IBAction func showSettings(_ sender: Any) {
         if let event = NSApplication.shared.currentEvent {
-            NSMenu.popUpContextMenu(sender.menu!, with: event, for: sender)
+            NSMenu.popUpContextMenu(settingsButton.menu!, with: event, for: settingsButton)
         }
     }
     
-    @IBAction func shareText(_ sender: NSButton) {
+    @IBAction func shareText(_ sender: Any) {
         let shareMenu = NSSharingServicePicker(items: [text])
-        shareMenu.show(relativeTo: sender.bounds, of: sender, preferredEdge: .maxY)
+        shareMenu.show(relativeTo: shareButton.bounds, of: shareButton, preferredEdge: .maxY)
     }
     
     // MARK: Private functions
