@@ -19,7 +19,7 @@ class ViewController: NSViewController, NSTextViewDelegate {
     var text = ""
     var onTextChanged: ((String) -> Void)? = nil
     
-    // MARK: App lifecycle
+    // MARK: Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()

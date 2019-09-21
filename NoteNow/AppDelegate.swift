@@ -30,7 +30,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
-    // MARK: App lifecycle
+    // MARK: Lifecycle
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         statusItem.button?.title = "❖"
