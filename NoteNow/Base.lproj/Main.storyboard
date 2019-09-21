@@ -702,7 +702,7 @@
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="unemphasizedSelectedContentBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <size key="minSize" width="358" height="349"/>
-                                            <size key="maxSize" width="370" height="10000000"/>
+                                            <size key="maxSize" width="374" height="10000000"/>
                                             <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
                                     </subviews>
@@ -749,7 +749,7 @@
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="U9W-by-HKG">
-                                <rect key="frame" x="334" y="8" width="18" height="17"/>
+                                <rect key="frame" x="96" y="8" width="18" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="18" id="jzE-W1-Jhe"/>
                                 </constraints>
@@ -768,11 +768,11 @@
                             <constraint firstItem="URE-ie-EYI" firstAttribute="top" secondItem="2TU-Ed-6dI" secondAttribute="bottom" constant="8" id="8lc-Yd-xoX"/>
                             <constraint firstItem="2TU-Ed-6dI" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="8" id="9UB-B0-0gv"/>
                             <constraint firstAttribute="trailing" secondItem="URE-ie-EYI" secondAttribute="trailing" constant="8" id="CLU-9l-FVq"/>
-                            <constraint firstItem="URE-ie-EYI" firstAttribute="leading" secondItem="U9W-by-HKG" secondAttribute="trailing" constant="8" id="CPl-yw-H7I"/>
+                            <constraint firstItem="URE-ie-EYI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="U9W-by-HKG" secondAttribute="trailing" constant="8" id="CPl-yw-H7I"/>
                             <constraint firstAttribute="bottom" secondItem="5f1-XW-E8P" secondAttribute="bottom" constant="8" id="DMr-1s-psd"/>
                             <constraint firstItem="5Iy-Rk-efR" firstAttribute="top" secondItem="2TU-Ed-6dI" secondAttribute="bottom" constant="8" id="FZI-CY-kSZ"/>
                             <constraint firstItem="5Iy-Rk-efR" firstAttribute="leading" secondItem="5f1-XW-E8P" secondAttribute="trailing" constant="8" id="IGA-3A-h1m"/>
-                            <constraint firstItem="U9W-by-HKG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5Iy-Rk-efR" secondAttribute="trailing" constant="8" id="SCJ-co-Bp4"/>
+                            <constraint firstItem="U9W-by-HKG" firstAttribute="leading" secondItem="5Iy-Rk-efR" secondAttribute="trailing" constant="8" id="SCJ-co-Bp4"/>
                             <constraint firstItem="5f1-XW-E8P" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="8" id="UbN-EE-Mog"/>
                             <constraint firstItem="U9W-by-HKG" firstAttribute="top" secondItem="2TU-Ed-6dI" secondAttribute="bottom" constant="8" id="gfd-Cy-5f2"/>
                             <constraint firstItem="5f1-XW-E8P" firstAttribute="top" secondItem="2TU-Ed-6dI" secondAttribute="bottom" constant="8" id="jT5-Pk-Gux"/>
