@@ -2,7 +2,10 @@
 //  Storage.swift
 //  NoteNow
 //
-//  Copyright © 2017 Saoud M. Rizwan, All Rights Reserved
+//  Created by Huon Imberger on 15/9/19.
+//  Copyright © 2019 Huon Imberger. All rights reserved.
+//
+//  All credit to:
 //  https://medium.com/@sdrzn/swift-4-codable-lets-make-things-even-easier-c793b6cf29e1
 //
 

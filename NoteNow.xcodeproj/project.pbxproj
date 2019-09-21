@@ -21,11 +21,19 @@
 		3B4717CA232E60EB00B349EB /* GlobalKeybindPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4717C9232E60EB00B349EB /* GlobalKeybindPreferences.swift */; };
 		3B4717CC23323CD700B349EB /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4717CB23323CD700B349EB /* Storage.swift */; };
 		3B4717CE233446B800B349EB /* PrefsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4717CD233446B800B349EB /* PrefsWindow.swift */; };
+		3B4869BD2335EF890032829B /* NoteNowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4869BC2335EF890032829B /* NoteNowUITests.swift */; };
 		3B7660C5232CEB99005D65E4 /* PrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7660C4232CEB99005D65E4 /* PrefsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		3B0EF0BF23250850008061F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B0EF0A42325084F008061F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3B0EF0AB2325084F008061F2;
+			remoteInfo = NoteNow;
+		};
+		3B4869BF2335EF890032829B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3B0EF0A42325084F008061F2 /* Project object */;
 			proxyType = 1;
@@ -77,6 +85,9 @@
 		3B4717C9232E60EB00B349EB /* GlobalKeybindPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalKeybindPreferences.swift; sourceTree = "<group>"; };
 		3B4717CB23323CD700B349EB /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		3B4717CD233446B800B349EB /* PrefsWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsWindow.swift; sourceTree = "<group>"; };
+		3B4869BA2335EF890032829B /* NoteNowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteNowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B4869BC2335EF890032829B /* NoteNowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteNowUITests.swift; sourceTree = "<group>"; };
+		3B4869BE2335EF890032829B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B7660C4232CEB99005D65E4 /* PrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +107,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3B4869B72335EF890032829B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -107,6 +125,7 @@
 				3B4717C3232E52E100B349EB /* Cartfile */,
 				3B0EF0AE2325084F008061F2 /* NoteNow */,
 				3B0EF0C123250850008061F2 /* NoteNowTests */,
+				3B4869BB2335EF890032829B /* NoteNowUITests */,
 				3B0EF0AD2325084F008061F2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -116,6 +135,7 @@
 			children = (
 				3B0EF0AC2325084F008061F2 /* NoteNow.app */,
 				3B0EF0BE23250850008061F2 /* NoteNowTests.xctest */,
+				3B4869BA2335EF890032829B /* NoteNowUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,6 +166,15 @@
 				3B0EF0C423250850008061F2 /* Info.plist */,
 			);
 			path = NoteNowTests;
+			sourceTree = "<group>";
+		};
+		3B4869BB2335EF890032829B /* NoteNowUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3B4869BC2335EF890032829B /* NoteNowUITests.swift */,
+				3B4869BE2335EF890032829B /* Info.plist */,
+			);
+			path = NoteNowUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +217,24 @@
 			productReference = 3B0EF0BE23250850008061F2 /* NoteNowTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		3B4869B92335EF890032829B /* NoteNowUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B4869C32335EF890032829B /* Build configuration list for PBXNativeTarget "NoteNowUITests" */;
+			buildPhases = (
+				3B4869B62335EF890032829B /* Sources */,
+				3B4869B72335EF890032829B /* Frameworks */,
+				3B4869B82335EF890032829B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3B4869C02335EF890032829B /* PBXTargetDependency */,
+			);
+			name = NoteNowUITests;
+			productName = NoteNowUITests;
+			productReference = 3B4869BA2335EF890032829B /* NoteNowUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -202,6 +249,10 @@
 						CreatedOnToolsVersion = 10.3;
 					};
 					3B0EF0BD23250850008061F2 = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = 3B0EF0AB2325084F008061F2;
+					};
+					3B4869B92335EF890032829B = {
 						CreatedOnToolsVersion = 10.3;
 						TestTargetID = 3B0EF0AB2325084F008061F2;
 					};
@@ -222,6 +273,7 @@
 			targets = (
 				3B0EF0AB2325084F008061F2 /* NoteNow */,
 				3B0EF0BD23250850008061F2 /* NoteNowTests */,
+				3B4869B92335EF890032829B /* NoteNowUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -238,6 +290,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		3B0EF0BC23250850008061F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B4869B82335EF890032829B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -270,6 +329,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3B4869B62335EF890032829B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B4869BD2335EF890032829B /* NoteNowUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -277,6 +344,11 @@
 			isa = PBXTargetDependency;
 			target = 3B0EF0AB2325084F008061F2 /* NoteNow */;
 			targetProxy = 3B0EF0BF23250850008061F2 /* PBXContainerItemProxy */;
+		};
+		3B4869C02335EF890032829B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3B0EF0AB2325084F008061F2 /* NoteNow */;
+			targetProxy = 3B4869BF2335EF890032829B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -495,6 +567,44 @@
 			};
 			name = Release;
 		};
+		3B4869C12335EF890032829B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = JNLV9JG87V;
+				INFOPLIST_FILE = NoteNowUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.huonimberger.NoteNowUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = NoteNow;
+			};
+			name = Debug;
+		};
+		3B4869C22335EF890032829B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = JNLV9JG87V;
+				INFOPLIST_FILE = NoteNowUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.huonimberger.NoteNowUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = NoteNow;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -521,6 +631,15 @@
 			buildConfigurations = (
 				3B0EF0CB23250850008061F2 /* Debug */,
 				3B0EF0CC23250850008061F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B4869C32335EF890032829B /* Build configuration list for PBXNativeTarget "NoteNowUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B4869C12335EF890032829B /* Debug */,
+				3B4869C22335EF890032829B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
