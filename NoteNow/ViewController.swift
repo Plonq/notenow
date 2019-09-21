@@ -27,9 +27,9 @@ class ViewController: NSViewController, NSTextViewDelegate {
         noteTextView.delegate = self
         noteTextView.string = text
         
-        self.initSettingsMenu()
-        self.setupTextView()
-        self.setupShareButton()
+        initSettingsMenu()
+        initTextView()
+        initShareButton()
     }
 
     // MARK: Init
@@ -41,11 +41,11 @@ class ViewController: NSViewController, NSTextViewDelegate {
         settingsButton.menu = settingsMenu
     }
     
-    private func setupTextView() {
+    private func initTextView() {
         noteTextView.font = NSFont.systemFont(ofSize: 16.0)
     }
     
-    private func setupShareButton() {
+    private func initShareButton() {
         shareButton.sendAction(on: .leftMouseDown)
     }
     
