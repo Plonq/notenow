@@ -14,8 +14,10 @@ For example you could use it to:
 * ... Or anything else an instant text field could be used for!
 
 ## Features
-
 * Runs in the menu bar
 * Global hotkey to open it
-* Auto start on login
 * Share the note using the MacOS share functionality
+
+## TODO
+* Auto start on login
+* Unit/UI tests
