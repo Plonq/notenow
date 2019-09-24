@@ -21,3 +21,5 @@ For example you could use it to:
 ## TODO
 * Auto start on login
 * Unit/UI tests
+* Design a real icon for the status bar
+* Add option to display a badge (e.g. red circle) on the icon when there is a note, or perhaps manually toggled. Intended to solve the problem of "I gotta remember to deal with X soon but need to finish what I'm doing right now first"
