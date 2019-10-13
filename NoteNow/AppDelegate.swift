@@ -18,7 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     static let STORAGE_DATA = "data.json"
     static let STORAGE_GLOBAL_HOTKEY = "globalHotkey.json"
     
-    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+    private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     private var text = ""
 
     public var hotKey: HotKey? {
@@ -36,11 +36,30 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: Lifecycle
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        initStatusItem()
+        loadConfigAndData()
+        
+        #if DEBUG
+        if CommandLine.arguments.contains("enable-testing") {
+            text = "This is a test note"
+        }
+        #endif
+    }
+
+    func applicationWillTerminate(_ aNotification: Notification) {
+        saveData()
+    }
+    
+    // MARK: Private functions
+    
+    private func initStatusItem() {
         statusItem.button?.title = "❖"
         statusItem.button?.target = self
         statusItem.button?.action = #selector(show)
-        
-        // Load saved text if it exists
+    }
+    
+    private func loadConfigAndData() {
+        // The app data (currently just the note text)
         if Storage.fileExists(AppDelegate.STORAGE_DATA, in: .documents) {
             let data = Storage.retrieve(AppDelegate.STORAGE_DATA, from: .documents, as: AppData.self)
             text = data.text
@@ -52,9 +71,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             hotKey = HotKey(keyCombo: KeyCombo(carbonKeyCode: globalKeybinds.keyCode, carbonModifiers: globalKeybinds.carbonFlags))
         }
     }
-
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Save text to storage
+    
+    private func saveData() {
         if Storage.fileExists(AppDelegate.STORAGE_DATA, in: .documents) {
             Storage.remove(AppDelegate.STORAGE_DATA, from: .documents)
         }
@@ -62,8 +80,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let data = AppData.init(text: text)
         Storage.store(data, to: .documents, as: AppDelegate.STORAGE_DATA)
     }
-    
-    // MARK: App
 
     @objc private func show() {
         let storyboard = NSStoryboard(name: "Main", bundle: nil)

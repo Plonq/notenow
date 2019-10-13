@@ -2,8 +2,8 @@
   "Mac" : [
     {
       "name" : "HotKey",
-      "hash" : "d047c70e053312f15b304d639d6989acfed31cff98dd93b47be20478b43e355b",
-      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+      "hash" : "f0efb24f664bffd2857fa4542d3e675497b153e26e53754ae9a32cd27874d97b",
+      "swiftToolchainVersion" : "5.1 (swiftlang-1100.0.270.13 clang-1100.0.33.7)"
     }
   ],
   "watchOS" : [
