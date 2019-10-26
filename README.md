@@ -1,8 +1,3 @@
-# Work in progress
-This app is a work in progress.
-
----
-
 # NoteNow
 NoteNow is a MacOS app, designed to allow you to quickly take temporary notes.
 
@@ -25,7 +20,7 @@ For example you could use it to:
 * Add option to display a badge (e.g. red circle) on the icon when there is a note, or perhaps manually toggled. Intended to solve the problem of "I gotta remember to deal with X soon but need to finish what I'm doing right now first"
 * Improve prefs window (layout, "Done" button, window title)
 * More options. Ideas:
-** Always select all after opening
-** Quick reminder (e.g. remind me in X minutes)
-** Resize, or size toggles
-** Word wrap toggle
+  * Always select all after opening
+  * Quick reminder (e.g. remind me in X minutes)
+  * Resize, or size toggles
+  * Word wrap toggle
